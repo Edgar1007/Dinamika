@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <script src="https://kit.fontawesome.com/373d278a84.js" crossorigin="anonymous"></script>
+    <title>Efecto ParalaxDos</title>
+    <style>
+        main{
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 2px;
+        }
+        section{
+            transform-style: preserve-3d;
+            position: relative;
+            height: 100vh;
+            color: #FFF
+        }
+        .parallax2{
+            position: relative;
+            height: 100vh; /* Ocupar el 100% de la altura de la ventana gráfica */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: right;
+        }
+        .parallax2::after{
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: translateZ(-1px)scale(1.5);
+            background-size: 100%;
+            background-color: #000000;
+            z-index: -1;
+        }
+        .bg2::after{
+            background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/PALLARAX-3.png");
+            background-color: #000000;
+            background-size:contain;
+        }
+        .S5{
+            padding-top: 40vh;
+            padding-right: 10vw;
+            font-size: 2vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+        .S6{
+            font-size: 3vw;
+            padding-right: 10vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 600;
+        }
+        .S7{
+            font-size: 1.2vw;
+            padding-right: 10vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 100;
+        }
+        .S8{
+            font-size: 1.2vw;
+            padding-right: 10vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 100;
+            cursor: pointer;
+            padding-top: 2vh;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="parallax2 bg2">
+            <p class="S5">Tu mejor opción en</p>
+            <p class="S6">Produccion Audio/Visual</p>
+            <p class="S7">La calidad y experiencia nos define como unos de los</p>
+            <p class="S7">mejores!</p>
+            <p class="S8">Saber Más&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></p>
+        </section>
+    </main>
+</body>
+</html>

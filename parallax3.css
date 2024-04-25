@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Segoe UI", sans-serif;
+    background: url(https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-1-scaled-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#U1{
+    top: 0vh;
+    left: 0vw;
+}
+#U2{
+    top: 50vh;
+    left: 0vw;
+}
+#U3{
+    top: -50vh;
+    left: 0vw;
+}
+#U4{
+    top: 0vh;
+    left: -50vw;
+}
+#U5{
+    top: 0vh;
+    left: 50vw;
+}

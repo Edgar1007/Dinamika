@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .elipse {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease-out;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elipse = document.querySelector('.elipse');
+      
+      elipse.addEventListener('mousemove', function (e) {
+        const { clientX, clientY } = e;
+        const { offsetWidth, offsetHeight } = elipse;
+        const x = (clientX - elipse.offsetLeft - offsetWidth / 2) / (offsetWidth / 2);
+        const y = (clientY - elipse.offsetTop - offsetHeight / 2) / (offsetHeight / 2);
+        elipse.style.transform = `translate(-50%, -50%) scale(${1 + Math.abs(x)}, ${1 + Math.abs(y)})`;
+      });
+
+      elipse.addEventListener('mouseleave', function () {
+        elipse.style.transform = 'translate(-50%, -50%)';
+      });
+      
+    });
+  </script>
+  <title>Deformar Elipse</title>
+</head>
+<body>
+  <div class="elipse"></div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <title>Efecto Seguimiento</title>
+    <style>
+        .CNosotros{
+            width: 99vw;
+            height: 90vh;
+            background: black;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .Gall {
+            width: 100%;
+            height: 75vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1px; 
+            overflow: hidden;
+        }
+        .services1 {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            width: 70%;
+            height: 80%;
+            margin: 0 8% 0 22%;
+            padding: 0;
+            cursor: pointer;
+            background: linear-gradient(to bottom, rgba(108,108,108,0.1), rgba(71,71,71,0.1));   
+            border-radius: 1vh; 
+            z-index: 2;
+        }
+        .services2 {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            width: 70%;
+            height: 80%;
+            margin: 0 22% 0 8%;
+            padding: 0;
+            cursor: pointer;
+            background: linear-gradient(to bottom, rgba(108,108,108,0.1), rgba(71,71,71,0.1)); 
+            border-radius: 1vh; 
+            z-index: 2;
+        }
+        .tlt{
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 700;
+            font-size: 2.5vw;
+            text-align: center;
+        }
+        .plp{
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 1.5vw;
+            text-align: left;
+            line-height: 5vh;
+            width: 20vw;
+        }
+        .xtra{
+            display: flex;
+            justify-content: center;
+        }
+        .sep{
+            background-color: #ffffff; 
+            height: 1px; 
+            width: 20%; 
+        }
+        .elipse {
+            width: 30vw;
+            height: 30vh;
+            background: radial-gradient(circle at center, #A179FF,#6286FF);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease-out;
+            z-index: 1;
+            filter: blur(20px);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elipse = document.querySelector('.elipse');
+      
+            elipse.addEventListener('mousemove', function (e) {
+                const { clientX, clientY } = e;
+                const { offsetWidth, offsetHeight } = elipse;
+                const x = (clientX - elipse.offsetLeft - offsetWidth / 2) / (offsetWidth / 2);
+                const y = (clientY - elipse.offsetTop - offsetHeight / 2) / (offsetHeight / 2);
+                elipse.style.transform = `translate(-50%, -50%) scale(${1 + Math.abs(x)}, ${1 + Math.abs(y)})`;
+            });
+
+            elipse.addEventListener('mouseleave', function () {
+                elipse.style.transform = 'translate(-50%, -50%)';
+            });
+      
+        });
+    </script>
+</head>
+<body>
+    <div class="CNosotros">
+        <br>
+        <br>
+        <p class="tlt">¿Por qué elegirnos?</p>
+        <div class="xtra">
+            <hr class="sep">
+        </div>
+        <br>
+        <br>
+        <div class="Gall">
+            <div class="elipse">
+            </div>
+            <div class="services1">
+                <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Group-3.svg"  alt="money"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="plp">Servicios 100% personalizados que se ajustan a tus necesidades y presupuesto.</p>
+            </div>
+            <div class="services2">
+                <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Vector-1.svg" alt="laptop"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="plp">Servicios siempre van acompañados de un reporte detallado de actividades y resultados.</p>
+            </div>
+            <div class="services1">
+                <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Group-1.png"  alt="rocket"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="plp">Trabajamos sobre altos estándares generando servicios únicos y de gran calidad. </p>
+            </div>
+            <div class="services2">
+                <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Group-2-1.png"alt="starts"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="plp">Estudiamos tu mercado para poder crear campañas y contenido que seduzca a tu público.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

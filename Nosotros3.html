@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <style>
+        main {
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            perspective: 2px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box !important;
+            background-color: #000000;
+        }
+        section {
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .parallax3 {
+            position: relative;
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: right;
+            overflow: hidden; 
+        }
+        .parallax4{
+            position: relative;
+            height: 70vh; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .parallax3::after {
+            content: " ";
+            position: absolute;
+            top: 0; left: 0;bottom: 0;right: 0;
+            transform: translateZ(-1px) scale(1.5);
+            background-size: 100%;
+            background-color: #000000;
+            transition: transform 0.3s ease; 
+            z-index: -1;
+        }
+        .parallax4::after{
+            content: " ";
+            position: absolute;
+            top: 0;left: 0;bottom: 0;right: 0;
+            transform: translateZ(-1px)scale(1.5);
+            background-size: 100%;
+            background-color: #000000;
+            z-index: -1;
+        }
+        .parallax3:hover::after {
+            transform: translateX(10vw) translateY(23vh);
+        }
+        .parallax4:hover::after {
+            transform: translateX(-10vw) translateY(-10vh); 
+        }
+        .bg4::after {
+            background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Camara.png");
+            background-color: #000000;
+            background-size: 50%;
+            background-repeat: no-repeat;
+            left: 0vw;
+            top: -20vh;
+            transition: transform 0.3s ease;
+        }
+        .bg5::after{
+            background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Reflector.png");
+            background-color: #000000;
+            background-size:100%;
+            background-repeat: no-repeat;
+            left: 60vw;
+            top:  35vh;
+            transition: transform 0.3s ease;
+        }
+        .N3{
+            padding: 25vh 0 0 10vw;
+            font-size: 3vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+        .N4{
+            padding: 0 0 0 10vw;
+            font-size: 1.5vw;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            width: 40vw ;
+        }
+        .N1 {
+            padding: 25vh 27vw 0 0;
+            font-size: 3vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+        .N2 {
+            padding: 0 0 0 49vw;
+            font-size: 1.5vw;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            text-align: left;
+            width: 40vw;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="parallax3 bg4">
+            <p class="N1">Quienes somos:</p>
+            <p class="N2">Somos la solución para dar a conocer y posicionar tu marca a través de redes sociales, buscadores y medios de
+               comunicación digitales.</p>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section class="parallax4 bg5">
+            <p class="N3">¿Cómo trabajamos?</p>
+            <p class="N4">Sabemos que cada empresa es diferente,
+                por lo tanto sus necesidades publicitarias
+                no pueden ser las mismas, Nosotros planeamos e implementamos
+                estrategias de marketing con contenido
+                de alta calidad y a la medida de cada
+                marca.</p>
+        </section>
+    </main>
+</body>
+</html>

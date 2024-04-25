@@ -1,0 +1,149 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+main{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+section{
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    color: #FFF
+}
+section h1{
+    text-align: center;
+    font-size: 4rem;
+    font-family: sans-serif;
+}
+.no-parallax{
+    background-color: #000000;
+    z-index: 999;
+}
+.parallax{
+    position: relative;
+    height: 100vh; /* Ocupar el 100% de la altura de la ventana gráfica */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateZ(-1px)scale(1.5);
+    background-size: 100%;
+    background-color: #000000;
+    z-index: -1;
+}
+.parallax2{
+    position: relative;
+    height: 100vh; /* Ocupar el 100% de la altura de la ventana gráfica */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: right;
+}
+.parallax2::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateZ(-1px)scale(1.5);
+    background-size: 100%;
+    background-color: #000000;
+    z-index: -1;
+}
+.bg1::after{
+    background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/PALLARAX-2.png");
+    background-color: #000000;
+    background-size:contain;
+}
+.bg2::after{
+    background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/PALLARAX-3.png");
+    background-color: #000000;
+    background-size:contain;
+}
+.bg3::after{
+    background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/PALLARAX-1.png");
+    background-color: #000000;
+    background-size:contain;
+}
+.S1{
+    padding-top: 40vh;
+    padding-left: 10vw;
+    font-size: 2vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 400;
+}
+.S2{
+    padding-left: 10vw;
+    font-size: 3vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 600;
+}
+.S3{
+    padding-top: 2vh;
+    padding-left: 10vw;
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 100;
+    width: 42vw;
+}
+.S4{
+    padding-top: 2vh;
+    padding-left: 10vw;
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+}
+.S5{
+    padding-top: 40vh;
+    padding-right: 10vw;
+    font-size: 2vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 400;
+}
+.S6{
+    font-size: 3vw;
+    padding-right: 10vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 600;
+}
+.S7{
+    font-size: 1.2vw;
+    padding-right: 10vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 100;
+}
+.S8{
+    font-size: 1.2vw;
+    padding-right: 10vw;
+    color: white;
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+    padding-top: 2vh;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <script src="https://kit.fontawesome.com/373d278a84.js" crossorigin="anonymous"></script>
+    <title>EtiquetasProduccionResponse</title>
+    <style>
+        @media (min-width:1025px){
+            .ETp{
+                background-color: rgb(0, 0, 0);
+                margin:0;
+                padding:0;
+                height: auto;
+            }
+            .etqp1,.etqp2{
+                display: flex;
+                justify-content:center;
+            }
+            .etqp3{
+                color: white;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 200;
+                font-size: 1.2vw;
+                border-radius: 0.9vh;
+                border: 1px solid white;
+                padding-left: 3vw;
+                padding-right: 3vw;
+            }
+        }
+        @media (min-width:768px) and (max-width: 1024px){
+            .ETp{
+                background-color: rgb(0, 0, 0);
+                margin:0;
+                padding:0;
+                height: auto;
+            }
+            .etqp1,.etqp2{
+                display: flex;
+                justify-content:center;
+            }
+            .etqp3{
+                color: white;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 300;
+                font-size: 2.5vw;
+                border-radius: 0.9vh;
+                border: 1px solid white;
+                padding-left: 3vw;
+                padding-right: 3vw;
+            }
+        }
+        @media (max-width: 767px) {
+            .ETp{
+                background-color: rgb(0, 0, 0);
+                margin:0;
+                padding:0;
+                height: auto;
+            }
+            .etqp1,.etqp2{
+                display: block;
+                padding: 0 20vw 0 20vw;
+                margin: 0;
+            }
+            .etqp3{
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 200;
+                font-size: 5vw;
+                border-radius: 0.9vh;
+                border: 1px solid white;
+                padding: 0 3vw 0 3vw;
+                margin: 0;
+                text-align: center;
+            }
+            #f1{
+                margin-top: 5vw;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="ETp" id="ETp">
+        <div class="etqp1">
+            <p class="etqp3">Cineminuto</p>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="etqp3">Videos Musicales</p>          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="etqp3">Transmisiones en vivo</p>
+        </div>
+        <div class="etqp2">
+            <p class="etqp3" id="f1">Cápsulas</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="etqp3">Cobertura de Eventos</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p class="etqp3">Comerciales</p>
+        </div>
+        <script>
+            const marcador = document.getElementById("ETp");
+            let reconstruye;
+    
+            document.addEventListener("DOMContentLoaded", ()=> {
+                reconstruye = window.innerWidth;
+                reconstruir(reconstruye);
+            });
+    
+            const reconstruir = (reconstruye)=>{
+                if(reconstruye<=1024){
+                    marcador.innerHTML = `<div class="etqp1">
+                                        <p class="etqp3">Cineminuto</p>       &nbsp;&nbsp;&nbsp;
+                                        <p class="etqp3">Videos Musicales</p> &nbsp;&nbsp;&nbsp;
+                                        <p class="etqp3">Transmisiones en vivo</p>
+                                      </div>
+                                      <div class="etqp2">
+                                        <p class="etqp3" id="f1">Cápsulas</p> &nbsp;&nbsp;&nbsp;
+                                        <p class="etqp3">Cobertura de Eventos</p> &nbsp;&nbsp;&nbsp;
+                                        <p class="etqp3">Comerciales</p>
+                                      </div>`
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

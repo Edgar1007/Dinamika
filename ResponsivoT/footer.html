@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+  <style>
+    body {
+      margin: 0;
+    }
+    .prf{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+    }
+    @media (min-width:1025px){
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            background-color: #1C1C1C;
+        }
+        .item {
+            background-color: #1C1C1C;
+            color: white;
+            padding: 1vw;
+            gap: 1px;
+        }
+        .prf{
+            text-align: left;
+            font-size: 1vw;
+        }
+        #c1{
+            padding-left: 4vw !important ;
+        }
+    }
+    @media (min-width:768px) and (max-width: 1024px){
+        
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+        .item {
+            background-color: #1C1C1C;
+            color: white;
+            padding-left: 2vw;
+            text-align: center;
+        }
+        .prf{
+            text-align: left;
+            font-size: 2vw;
+        }
+    }
+    @media (max-width: 767px) {
+        .contenedor {
+            display: grid;
+            grid-template-areas:
+            "col1 col1 col2 col2 col3 col3"
+            "col4 col4 col4 col4 col4 col4"
+            "col5 col5 col5 col5 col5 col5"
+            "col6 col6 col6 col6 col6 col6";
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .item {
+            background-color: #1C1C1C;
+            color: white;
+            text-align: center;
+            gap: none;
+        }
+        .item {
+            grid-area: col1;
+        }
+        .item:nth-child(2) {
+            grid-area: col2;
+        }
+        .item:nth-child(3) {
+            grid-area: col3;
+        }
+        .item:nth-child(4) {
+            grid-area: col4;
+        }
+        .item:nth-child(5) {
+            grid-area: col5;
+        }
+        .item:nth-child(6) {
+            grid-area: col6;
+        }
+        #c1,#c2,#c3{
+            width: 33.3vw;
+        }
+        .prf{
+            padding-left: 15%;
+            font-size: 3vw;
+            text-align: left;
+        }
+        #p6,#p7{
+            text-align: center;
+            padding: 0;
+        }
+        #c4,#c5{
+            content: "";
+        }
+    }
+    
+  </style>
+  <title>Diseño Responsive</title>
+</head>
+    <body>
+        <div class="contenedor">
+            <div class="item" id="c1">
+                <p class="prf">INICIO</p>
+            </div>
+            <div class="item" id="c2">
+               <p class="prf">SERVICIOS</p>
+               <p class="prf">MARKETING DIGITAL</p>
+               <p class="prf">PRODUCCIÓN</p>
+               <p class="prf">CASTING</p>
+            </div>
+            <div class="item" id="c3">
+                <p class="prf">CONTACTO</p>
+            </div>
+            <div class="item" id="c4">
+            </div>
+            <div class="item" id="c5">
+            </div>
+            <div class="item">
+                <p class="prf" id="p6">00 0000 0000</p>
+                <p class="prf" id="p7">ejemplo@ejemplo.com</p>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </body>
+</html>

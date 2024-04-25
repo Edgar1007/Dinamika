@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <title>NosotrosDos</title>
+    <style>
+        main{
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 2px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box !important;
+        }
+        section{
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .parallax4{
+            position: relative;
+            height: 70vh; /* Ocupar el 100% de la altura de la ventana gráfica */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .parallax4::after{
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: translateZ(-1px)scale(1.5);
+            background-size: 100%;
+            background-color: #000000;
+            z-index: -1;
+        }
+        .bg5::after{
+            background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Reflector.png");
+            background-color: #000000;
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        .N3{
+            padding: 25vh 27vw 0 0;
+            font-size: 3vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+        .N4{
+            padding: 0 0 0 49vw;
+            font-size: 1.5vw;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="parallax4 bg5">
+            <p class="N1">¿Cómo trabajamos?</p>
+            <p class="N2">Sabemos que cada empresa es diferente,
+                por lo tanto sus necesidades publicitarias
+                no pueden ser las mismas, Nosotros planeamos e implementamos
+                estrategias de marketing con contenido
+                de alta calidad y a la medida de cada
+                marca.</p>
+        </section>
+    </main>
+</body>
+</html>

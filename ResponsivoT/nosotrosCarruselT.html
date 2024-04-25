@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel IMG</title>
+    <script src="https://kit.fontawesome.com/373d278a84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <style>
+        @media (min-width:1025px){
+            .contenedorCarrusel{
+                background-color: #000000;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            .CCC{
+                width: 100%;
+                position: relative !important;
+                display: flex !important;
+            }
+            .botonA,.botonS{
+                display: flex;
+                width: 7%;
+                align-items: center;
+                justify-content:center;
+            }
+            .CCGrande{
+                width: 86% !important;
+                overflow: hidden !important;
+                position: relative !important;
+                display: grid !important;
+            }
+            .med{
+                display: flex !important;
+                transition: transform 0.5s ease !important; /* Agrega una transición suave al desplazamiento */
+            }
+            .imgGrande{
+                flex: 0 0 28.57%;
+                height: auto !important;
+                box-sizing: border-box !important;
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+            .imgGrande img{
+                width: 100% !important;
+                height: auto !important; 
+                cursor: pointer;
+            }
+            #anteriorCC,#siguienteCC{
+                width: 4vw;
+                height: 4vw;
+                border-radius: 100%;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                border-width: 3px;
+                border-color: #000000;
+            }
+            .nombre{
+                padding: 1vw 0 0 0;
+                color: white;
+                font-size: 1.5vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+                line-height: 1vw;
+            }
+            .puesto{
+                color: #6E6E6E;
+                font-size: 1.5vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+            }
+        }
+        @media (min-width:768px) and (max-width:1024px){
+            .contenedorCarrusel{
+                background-color: #000000;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            .CCC{
+                width: 100%;
+                position: relative !important;
+                display: flex !important;
+            }
+            .botonA,.botonS{
+                display: flex;
+                width: 7%;
+                align-items: center;
+                justify-content:center;
+            }
+            .CCGrande{
+                width: 86% !important;
+                overflow: hidden !important;
+                position: relative !important;
+                display: grid !important;
+            }
+            .med{
+                display: flex !important;
+                transition: transform 0.5s ease !important; /* Agrega una transición suave al desplazamiento */
+            }
+            .imgGrande{
+                flex: 0 0 28.57%;
+                height: auto !important;
+                box-sizing: border-box !important;
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+            .imgGrande img{
+                width: 100% !important;
+                height: auto !important; 
+                cursor: pointer;
+            }
+            #anteriorCC,#siguienteCC{
+                width: 5vw;
+                height: 5vw;
+                border-radius: 100%;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                border-width: 3px;
+                border-color: #000000;
+            }
+            .nombre{
+                padding: 1vw 0 0 0;
+                color: white;
+                font-size: 2vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+                line-height: 1vw;
+            }
+            .puesto{
+                color: #6E6E6E;
+                font-size: 2vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+            }
+        }
+        @media (max-width:767px){
+            .contenedorCarrusel{
+                background-color: #000000;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            .CCC{
+                width: 100%;
+                position: relative !important;
+                display: flex !important;
+            }
+            .botonA,.botonS{
+                display: flex;
+                width: 7%;
+                align-items: center;
+                justify-content:center;
+            }
+            .CCGrande{
+                width: 86% !important;
+                overflow: hidden !important;
+                position: relative !important;
+                display: grid !important;
+            }
+            .med{
+                display: flex !important;
+                transition: transform 0.5s ease !important; /* Agrega una transición suave al desplazamiento */
+            }
+            .imgGrande{
+                flex: 0 0 66.66%;
+                height: auto !important;
+                box-sizing: border-box !important;
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+            .imgGrande img{
+                width: 100% !important;
+                height: auto !important; 
+                cursor: pointer;
+            }
+            #anteriorCC,#siguienteCC{
+                width: 8vw;
+                height: 8vw;
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                border:none;
+            }
+            .nombre{
+                padding: 1vw 0 0 0;
+                color: white;
+                font-size: 4vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+                line-height: 1vw;
+            }
+            .puesto{
+                color: #6E6E6E;
+                font-size: 4vw;
+                text-align: center;
+                font-family: 'Metrophobic', sans-serif;
+                font-weight: 400;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="contenedorCarrusel">
+        <div class="CCC">
+
+            <div class="botonA">
+                <button id="anteriorCC"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="CCGrande">
+                <div class="med">
+                    <div class="imgGrande" id="Im1">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-4.png" alt="ImagenRG1" id="T1">
+						<br>
+                        <p class="nombre">Nombre Completo</p>
+                        <p class="puesto">Director en en Area</p>
+                    </div>
+                    <div class="imgGrande" id="Im2">
+						<br>
+                        <p class="nombre">Nombre Completo</p>
+                        <p class="puesto">Director en en Area</p>
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-5.png" alt="ImagenRG2" id="T2">
+                    </div>
+                    <div class="imgGrande" id="Im3">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-6.png" alt="ImagenRG3" id="T3">
+						<br>
+                        <p class="nombre">Nombre Completo</p>
+                        <p class="puesto">Director en en Area</p>
+                    </div>
+                    <div class="imgGrande" id="Im4">
+						<br>
+                        <p class="nombre">Nombre Completo</p>
+                        <p class="puesto">Director en en Area</p>
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-7.png" alt="ImagenRG4" id="T4">
+                    </div>
+                    <div class="imgGrande" id="Im5">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-8-1.png" alt="ImagenRG5" id="T5">
+						<br>
+                        <p class="nombre">Nombre Completo</p>
+                        <p class="puesto">Director en en Area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="botonS">
+                <button id="siguienteCC"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const CCgrande = document.querySelector(".med");
+        const anterior = document.getElementById("anteriorCC");
+        const siguiente = document.getElementById("siguienteCC");
+        let posicionCC = 0;//yes
+        let desplazamiento;
+
+        siguiente.addEventListener("click", () => {
+            desplazamiento = window.innerWidth <= 767 ? 66.66 : 28.57;
+
+            if (posicionCC >-(CCgrande.children.length - 1) * desplazamiento) {
+                posicionCC -= desplazamiento;
+                CCgrande.style.transform = `translateX(${posicionCC}%)`;
+            }
+        });
+
+        anterior.addEventListener("click", () => {
+            desplazamiento = window.innerWidth <= 767 ? 66.66 : 28.57;
+
+            if (posicionCC < 0) {
+                posicionCC += desplazamiento;
+                CCgrande.style.transform = `translateX(${posicionCC}%)`;
+            }
+        });
+		
+		const T1 = document.getElementById('T1');
+        const T2 = document.getElementById('T2');
+        const T3 = document.getElementById('T3');
+        const T4 = document.getElementById('T4');
+        const T5 = document.getElementById('T5');
+		
+		T1.addEventListener('click',()=>{
+			localStorage.setItem('choose', 1);
+			window.location.href = 'https://dinamika.quetzalcode.com/prueba/';
+        })
+		T2.addEventListener('click',()=>{
+            localStorage.setItem('choose', 2);
+			window.location.href = 'https://dinamika.quetzalcode.com/prueba/';
+        })  
+        T3.addEventListener('click',()=>{
+            localStorage.setItem('choose', 3);
+			window.location.href = 'https://dinamika.quetzalcode.com/prueba/';
+        })  
+        T4.addEventListener('click',()=>{
+            localStorage.setItem('choose', 4);
+			window.location.href = 'https://dinamika.quetzalcode.com/prueba/';
+        })  
+        T5.addEventListener('click',()=>{
+            localStorage.setItem('choose', 5);
+			window.location.href = 'https://dinamika.quetzalcode.com/prueba/';
+        })  
+    </script>
+</body>
+</html>

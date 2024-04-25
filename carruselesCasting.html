@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel IMG</title>
+    <script src="https://kit.fontawesome.com/373d278a84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <style>
+        /* *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        } */
+        .contenedorPrincipal{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: #000000;
+            box-sizing: border-box;
+        }
+        .ContenedorC{
+            width: 100%;
+            position: relative !important;
+            display: flex !important;
+            margin: 0;
+            padding: 0;
+        }
+        .botonAnterior,.botonSiguiente{
+            display: flex;
+            width: 7%;
+            align-items: center;
+            justify-content:center;
+        }
+        .CImages{
+            width: 86% !important;
+            overflow: hidden !important;
+            position: relative !important;
+            display: grid !important;
+        }
+        .median{
+            display: flex !important;
+            transition: transform 0.5s ease !important; /* Agrega una transición suave al desplazamiento */
+        }
+        .imagenGrande{
+            flex: 0 0 28.57%;
+            height: auto !important;
+            box-sizing: border-box !important;
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+        .imagenGrande img{
+            width: 100% !important;
+            height: auto !important; 
+            cursor: pointer;
+        }
+        #anteriorSS,#siguienteSS{
+            width: 4vw;
+            height: 4vw;
+            border-radius: 100%;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border-width: 3px;
+            border-color: #000000;
+        }
+        .nombreC{
+            color: white;
+            font-size: 1.4vw;
+            text-align: center;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+            line-height: 4vh;
+        }
+        .puestoC{
+            color: #6E6E6E;
+            font-size: 1.4vw;
+            text-align: center;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+
+        .ContenedorI{
+            width: 100%;
+            height: 80vh;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: rgb(0, 0, 0);
+        }
+        .content{
+            display: none;
+        }
+        .content-active{
+            background: rgb(0, 0, 0);
+            display: inline-flex;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .imgPerson{
+            background-color: rgb(0, 0, 0);
+            width: 40%;
+            height: 100%; 
+            display: flex;
+            justify-content: center;
+        }
+        .imgPerson img{
+            width: auto;
+            height: 100%; 
+        }
+        .infoPerson{
+            width: 60%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .primeraMitad{
+            height: 55%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .segundaMitad{
+            height: 45%;
+            width: 100%;
+        }
+        .titleK{
+            color: white;
+            font-size: 3vw;
+            text-align: left;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 600;
+            height: 25%;
+            padding:0;
+            margin: 0;
+        }
+        .descK{
+            color: white;
+            font-size: 2vw;
+            text-align: left;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 100;
+            height: 35%;
+            padding:0;
+            margin: 0;
+        }
+        .etiquetas{
+            display: flex;
+			justify-content:left; 
+            margin: 0;
+            padding: 0;
+        }
+        .etiquetas2{
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 200;
+            font-size: 2vw;
+            border-radius: 0.9vh;
+            border: 1px solid white;
+			padding-left: 3vw;
+            padding-right: 3vw;
+            margin: 0.6vw 0 0.6vw 0;
+            padding: 0;
+        }
+        .project{
+            padding-top: 5vh;
+            color: white;
+            font-size: 2vw;
+            text-align: left;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            padding: 0;
+            margin: 0;
+        }
+        .list{
+            color: white;
+            font-size: 1.8vw;
+            text-align: left;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            padding-left: 3vw;
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedorPrincipal">
+        <div class="ContenedorI">
+            <div id="content1" class="content content-active">
+                <div class="imgPerson">
+                    <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-4.png" alt="Persona1">
+                </div>
+                <div class="infoPerson">
+                    <div class="primeraMitad">
+                        <p class="titleK">Nombre Completo</p>
+                        <p class="descK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Casting para comerciales</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <p class="etiquetas2">Peliculas</p>         
+                        </div>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Cortometrajes</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            <p class="etiquetas2">Spot´s Gubernamentales</p>
+                        </div>
+                    </div>
+                    <div class="segundaMitad">
+                        <br>
+                        <br>
+                        <br>
+                        <p class="project">Proyectos:</p>
+                        <br>
+                        <ul>
+                            <li class="list">Proyecto1</li>
+                            <li class="list">Proyecto2</li>
+                            <li class="list">Proyecto3</li>
+                            <li class="list">Proyecto4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content2" class="content">
+                <div class="imgPerson">
+                    <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-5.png" alt="Persona1">
+                </div>
+                <div class="infoPerson">
+                    <div class="primeraMitad">
+                        <p class="titleK">Nombre Completo</p>
+                        <p class="descK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Casting para comerciales</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <p class="etiquetas2">Peliculas</p>         
+                        </div>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Cortometrajes</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            <p class="etiquetas2">Spot´s Gubernamentales</p>
+                        </div>
+                    </div>
+                    <div class="segundaMitad">
+                        <p class="project">Proyectos:</p>
+                        <br>
+                        <ul>
+                            <li class="list">Proyecto1</li>
+                            <li class="list">Proyecto2</li>
+                            <li class="list">Proyecto3</li>
+                            <li class="list">Proyecto4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content3" class="content">
+                <div class="imgPerson">
+                    <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-6.png" alt="Persona1">
+                </div>
+                <div class="infoPerson">
+                    <div class="primeraMitad">
+                        <p class="titleK">Nombre Completo</p>
+                        <p class="descK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Casting para comerciales</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <p class="etiquetas2">Peliculas</p>         
+                        </div>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Cortometrajes</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            <p class="etiquetas2">Spot´s Gubernamentales</p>
+                        </div>
+                    </div>
+                    <div class="segundaMitad">
+                        <p class="project">Proyectos:</p>
+                        <br>
+                        <ul>
+                            <li class="list">Proyecto1</li>
+                            <li class="list">Proyecto2</li>
+                            <li class="list">Proyecto3</li>
+                            <li class="list">Proyecto4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content4" class="content">
+                <div class="imgPerson">
+                    <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-7.png" alt="Persona1">
+                </div>
+                <div class="infoPerson">
+                    <div class="primeraMitad">
+                        <p class="titleK">Nombre Completo</p>
+                        <p class="descK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Casting para comerciales</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <p class="etiquetas2">Peliculas</p>         
+                        </div>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Cortometrajes</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            <p class="etiquetas2">Spot´s Gubernamentales</p>
+                        </div>
+                    </div>
+                    <div class="segundaMitad">
+                        <p class="project">Proyectos:</p>
+                        <br>
+                        <ul>
+                            <li class="list">Proyecto1</li>
+                            <li class="list">Proyecto2</li>
+                            <li class="list">Proyecto3</li>
+                            <li class="list">Proyecto4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content5" class="content">
+                <div class="imgPerson">
+                    <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-8-1.png" alt="Persona1">
+                </div>
+                <div class="infoPerson">
+                    <div class="primeraMitad">
+                        <p class="titleK">Nombre Completo</p>
+                        <p class="descK">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Casting para comerciales</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            <p class="etiquetas2">Peliculas</p>         
+                        </div>
+                        <div class="etiquetas">
+                            <p class="etiquetas2">Cortometrajes</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                            <p class="etiquetas2">Spot´s Gubernamentales</p>
+                        </div>
+                    </div>
+                    <div class="segundaMitad">
+                        <p class="project">Proyectos:</p>
+                        <br>
+                        <ul>
+                            <li class="list">Proyecto1</li>
+                            <li class="list">Proyecto2</li>
+                            <li class="list">Proyecto3</li>
+                            <li class="list">Proyecto4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br><br><br><br><br><br><br><br><br><br>
+
+        <div class="ContenedorC">
+
+            <div class="botonAnterior">
+                <button id="anteriorSS"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="CImages">
+                <div class="median">
+                    <div class="imagenGrande" id="Im1">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-4.png" alt="Persona1" id="Persona1">
+                        <br>
+                        <p class="nombreC">nombre Completo</p>
+                        <p class="puestoC">Director en en Area</p>
+                    </div>
+                    <div class="imagenGrande" id="Im2">
+                        <br>
+                        <p class="nombreC">nombre Completo</p>
+                        <p class="puestoC">Director en en Area</p>
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-5.png" alt="Persona2" id="Persona2">
+                    </div>
+                    <div class="imagenGrande" id="Im3">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-6.png" alt="Persona3" id="Persona3">
+                        <br>
+                        <p class="nombreC">nombre Completo</p>
+                        <p class="puestoC">Director en en Area</p>
+                    </div>
+                    <div class="imagenGrande" id="Im4">
+                        <br>
+                        <p class="nombreC">nombre Completo</p>
+                        <p class="puestoC">Director en en Area</p>
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-7.png" alt="Persona4" id="Persona4">
+                    </div>
+                    <div class="imagenGrande" id="Im5">
+                        <img src="https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/image-8-1.png" alt="Persona5" id="Persona5">
+                        <br>
+                        <p class="nombreC">nombre Completo</p>
+                        <p class="puestoC">Director en en Area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="botonSiguiente">
+                <button id="siguienteSS"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const CImages = document.querySelector(".median");
+        const ant = document.getElementById("anteriorSS");
+        const sig = document.getElementById("siguienteSS");
+
+        let posicionK = 0;
+
+        sig.addEventListener("click", () => {
+            if (posicionK >-(CImages.children.length - 1) * 28.57) {
+                posicionK -= 28.57;
+                CImages.style.transform = `translateX(${posicionK}%)`;
+            }
+        });
+
+        ant.addEventListener("click", () => {
+            if (posicionK < 0) {
+                posicionK += 28.57;
+                CImages.style.transform = `translateX(${posicionK}%)`;
+            }
+        });
+        const persona1 = document.getElementById('Persona1');
+        const persona2 = document.getElementById('Persona2');
+        const persona3 = document.getElementById('Persona3');
+        const persona4 = document.getElementById('Persona4');
+        const persona5 = document.getElementById('Persona5');
+        const content1 = document.getElementById('content1');
+        const content2 = document.getElementById('content2');
+        const content3 = document.getElementById('content3');
+        const content4 = document.getElementById('content4');
+        const content5 = document.getElementById('content5');
+
+        let choose = 1;
+
+        const changeOption = ()=>{
+            if( choose == 1){
+                content1.classList.value = 'content content-active';
+            }
+            else{
+                content1.classList.value = 'content';
+            }
+            if( choose == 2){
+                content2.classList.value = 'content content-active';
+            }
+            else{
+                content2.classList.value = 'content';
+            }
+            if( choose == 3){
+                content3.classList.value = 'content content-active';
+            }
+            else{
+                content3.classList.value = 'content';
+            }
+            if( choose == 4){
+                content4.classList.value = 'content content-active';
+            }
+            else{
+                content4.classList.value = 'content';
+            }
+            if( choose == 5){
+                content5.classList.value = 'content content-active';
+            }
+            else{
+                content5.classList.value = 'content';
+            }
+        }
+                
+        persona1.addEventListener('click',()=>{
+            choose = 1;
+            changeOption();
+        })
+        persona2.addEventListener('click',()=>{
+            choose = 2;
+            changeOption();
+        })  
+        persona3.addEventListener('click',()=>{
+            choose = 3;
+            changeOption();
+        })  
+        persona4.addEventListener('click',()=>{
+            choose = 4;
+            changeOption();
+        })  
+        persona5.addEventListener('click',()=>{
+            choose = 5;
+            changeOption();
+        })  
+    </script>
+</body>
+</html>

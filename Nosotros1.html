@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <title>NosotrosUno</title>
+    <style>
+        main{
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            perspective: 2px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box !important;
+        }
+        section{
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .parallax3{
+            position: relative;
+            height: 70vh; /* Ocupar el 100% de la altura de la ventana gráfica */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: right;
+           
+        }
+        .parallax3::after{
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: translateZ(-1px)scale(1.5);
+            background-size: 100%;
+            background-color: #000000;
+            z-index: -1;
+        }
+        .parallax3:hover .bg4 {
+            transform: translateY(0);
+        }
+        .bg4::after{
+            background: url("https://dinamika.quetzalcode.com/wp-content/uploads/2024/01/Camara.png");
+            background-color: #000000;
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: -10vw;
+            transition: transform 0.3s ease;
+        }
+        .N1{
+            padding: 25vh 27vw 0 0;
+            font-size: 3vw;
+            color: white;
+            font-family: 'Metrophobic', sans-serif;
+            font-weight: 400;
+        }
+        .N2{
+            padding: 0 0 0 49vw;
+            font-size: 1.5vw;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            text-align: left;
+            width: 40vw;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="parallax3 bg4">
+            <p class="N1">Quienes somos:</p>
+            <p class="N2">Somos la solución para dar a conocer y posicionar tu marca a través de redes sociales, buscadores y medios de
+               comunicación digitales.</p>
+        </section>
+    </main>
+</body>
+</html>
